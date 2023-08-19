@@ -1,0 +1,37 @@
+[
+    {
+        "title": "HOME",
+        "navigate": "Home",
+        "logo": "home"
+    },
+    {
+        "title": "KELAS",
+        "navigate": "KElas",
+        "logo": "kelas"
+    },
+    {
+        "title": "EKSTRAKULIKULER",
+        "navigate": "Ekstrakulikuler",
+        "logo": "ekstrakulikuler"
+    },
+    {
+        "title": "KERJA PRAKTIK",
+        "navigate": "KerjaPraktik",
+        "logo": "kerjapraktik"
+    },
+    {
+        "title": "JADWAL PELAJARAN",
+        "navigate": "JadwalPelajaran",
+        "logo": "kalender"
+    },
+    {
+        "title": "KALENDER AKADEMIK",
+        "navigate": "KalenderAkademik",
+        "logo": "kalender"
+    },
+    {
+        "title": "HOME",
+        "navigate": "Home",
+        "logo": "logout"
+    }
+]
