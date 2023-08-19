@@ -30,7 +30,7 @@
         "logo": "kalender"
     },
     {
-        "title": "HOME",
+        "title": "LOGOUT",
         "navigate": "Home",
         "logo": "logout"
     }

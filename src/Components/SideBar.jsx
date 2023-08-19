@@ -1,8 +1,13 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {useState, useEffect} from 'react';
 import button from '../Data/SidebarButtons.json';
+import home from '../Image/sidebar/home.png';
+import logout from '../Image/sidebar/logout.svg';
 
-const logo = {}
+const logo = {
+  home,
+  logout
+};
 
 const SideBar = ({navigation, position}) => {
   const [loadButton, setLoadButton] = useState(false);
@@ -37,15 +42,46 @@ const SideBar = ({navigation, position}) => {
       </View>
       <View style={style.listButtons}>
         {button.map(e => (
-          <TouchableOpacity style={style.button} onPress={() => navigation.navigate(`${e.navigate}`)}>
+          <TouchableOpacity
+            style={style.button}
+            onPress={() => navigation.navigate(`${e.navigate}`)}>
             {/* {loadButton ? (
-              <Text style={{color: 'white'}}>Memuat...</Text>              
+              <>
+                <View
+                  style={{
+                    height: '100%',
+                    width: 60,
+                    backgroundColor: 'black',
+                  }}></View>
+                <View style={style.buttonText}>
+                  <Text style={{color: 'white', fontSize: 12}}>Memuat...</Text>
+                </View>
+              </>
             ) : (
-              <Text style={{color: 'white'}}>{e.title}</Text>
+              <>
+                <View
+                  style={{
+                    height: '100%',
+                    width: 60,
+                    backgroundColor: 'black',
+                  }}></View>
+                <View style={style.buttonText}>
+                  <Text style={{color: 'white', fontSize: 12}}>{e.title}</Text>
+                </View>
+              </>
             )} */}
-            <View style={{height: '100%'}}></View>
+            <View
+              style={{
+                height: '100%',
+                width: 60,
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
+                <Image style={{width: '50%', height: '50%'}} source={logo[e.logo]}/>
+              </View>
             <View style={style.buttonText}>
-              <Text style={{color: 'white'}}>{e.title}</Text>
+              <Text style={{color: 'white', fontSize: 12}}>{e.title}</Text>
             </View>
           </TouchableOpacity>
         ))}
@@ -74,7 +110,7 @@ const style = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    gap: 5
+    gap: 5,
   },
   headersButtonCase: {
     width: '100%',
@@ -90,27 +126,25 @@ const style = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   listButtons: {
     width: '100%',
     height: 350,
-    backgroundColor: 'black',
     display: 'flex',
   },
   button: {
-    width: "100%",
+    width: '100%',
     height: 50,
-    backgroundColor: 'green',
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   buttonText: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-  }
+    height: '100%',
+    paddingHorizontal: 10,
+  },
 });
 export default SideBar;
